@@ -10,11 +10,11 @@ import java.util.stream.Collectors;
 
 import static com.example.geektrust.constants.Constants.FUND_NOT_FOUND;
 
-public class UserUserPortfolioServiceImpl implements UserPortfolioService {
+public class UserPortfolioServiceImpl implements UserPortfolioService {
     private FundService fundService;
     private List<String> selectedFunds;
 
-    public UserUserPortfolioServiceImpl(FundService fundService) {
+    public UserPortfolioServiceImpl(FundService fundService) {
         this.fundService = fundService;
         this.selectedFunds = new ArrayList<>();
     }
@@ -62,6 +62,7 @@ public class UserUserPortfolioServiceImpl implements UserPortfolioService {
         return (double) (2 * commonStockCount) / totalStocksCount * 100;
     }
 
+    @Override
     public List<String> getSelectedFunds() {
         return selectedFunds;
     }

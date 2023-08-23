@@ -7,5 +7,6 @@ import java.util.List;
 public interface UserPortfolioService {
     void currentPortfolio(List<String> fundNames);
     List<OverlapData> calculateOverlap(String fundName);
+    List<String> getSelectedFunds();
 
 }

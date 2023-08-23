@@ -2,7 +2,7 @@ package com.example.geektrust;
 
 import com.example.geektrust.services.FundServiceImpl;
 import com.example.geektrust.services.PortfolioManagerImpl;
-import com.example.geektrust.services.UserUserPortfolioServiceImpl;
+import com.example.geektrust.services.UserPortfolioServiceImpl;
 import com.example.geektrust.services.interfaces.FundService;
 import com.example.geektrust.services.interfaces.PortfolioManager;
 import com.example.geektrust.services.interfaces.UserPortfolioService;
@@ -27,7 +27,7 @@ public class Main {
 
         FundLoader fundLoader = new FundLoader();
         FundService fundService = new FundServiceImpl(fundLoader);
-        UserPortfolioService portfolioService = new UserUserPortfolioServiceImpl(fundService);
+        UserPortfolioService portfolioService = new UserPortfolioServiceImpl(fundService);
         PortfolioManager portfolioManager = new PortfolioManagerImpl(fundService, portfolioService);
         portfolioManager.managePortfolio(args[0]);
     }
